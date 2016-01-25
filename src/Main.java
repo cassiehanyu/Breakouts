@@ -21,8 +21,22 @@ public class Main {
         SwingUtilities.invokeLater(new Runnable() {
 
             public void run() {
-                View ex = new View(model,controller);
-                ex.initUI();
+                JFrame mainWindown = new JFrame();
+                mainWindown.setPreferredSize(new Dimension(450,550));
+                mainWindown.setMaximumSize(new Dimension(800,1000));
+                mainWindown.setMinimumSize(new Dimension(400,550));
+                mainWindown.setResizable(true);
+                mainWindown.setVisible(true);
+
+                View view = new View(model,controller);
+                mainWindown.getContentPane().add(view);
+
+                mainWindown.pack();
+                mainWindown.setTitle("Breakouts");
+                mainWindown.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//                mainWindown.setLocationRelativeTo(null);
+
+               view.initUI();
             }
         });
     }
