@@ -110,14 +110,14 @@ public class StartView extends JPanel {
        label_HowToStart.setPreferredSize(new Dimension(this.getWidth() * 4 / 5, this.getHeight() / 10));
        label_HowToStart.setForeground(Color.yellow);
 
-//       start_img1.setIcon(new ImageIcon(new ImageIcon("pic/start.png").getImage().getScaledInstance(this.getWidth() * 1 / 10, this.getWidth() * 1 / 10, Image.SCALE_AREA_AVERAGING)));
-//       start_img1.setBackground(Color.black);
-//       start_img1.setOpaque(true);
-//
-//       start_img2.setIcon(new ImageIcon(new ImageIcon("pic/start.png").getImage().getScaledInstance(this.getHeight() * 1 / 10, this.getHeight() * 1 / 10, Image.SCALE_AREA_AVERAGING)));
-//       start_img2.setBackground(Color.black);
-//       start_img2.setOpaque(true);
-//       start_img2.setVisible(false);
+       start_img1.setIcon(new ImageIcon(new ImageIcon("pic/start.png").getImage().getScaledInstance(this.getWidth() * 1 / 10, this.getWidth() * 1 / 10, Image.SCALE_AREA_AVERAGING)));
+       start_img1.setBackground(Color.black);
+       start_img1.setOpaque(true);
+
+       start_img2.setIcon(new ImageIcon(new ImageIcon("pic/start.png").getImage().getScaledInstance(this.getWidth() * 1 / 10, this.getWidth() * 1 / 10, Image.SCALE_AREA_AVERAGING)));
+       start_img2.setBackground(Color.black);
+       start_img2.setOpaque(true);
+       start_img2.setVisible(false);
 
        GridBagConstraints c = new GridBagConstraints();
        c.gridx = 0;

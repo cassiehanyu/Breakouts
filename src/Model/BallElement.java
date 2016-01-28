@@ -1,6 +1,10 @@
 package Model;
 
+import javafx.scene.shape.Ellipse;
+
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -9,35 +13,15 @@ import java.util.TimerTask;
  */
 public class BallElement extends GameElement {
 
-    private final double radius;
+    private double diameter;
+    private boolean right, down;
 
-    Timer move;
 
-    public BallElement(double x, double y, double vx, double vy) {
-        super(x,y,vx,vy);
-        radius = 15;
-//
-//        move = new Timer();
-//        move.scheduleAtFixedRate(new TimerTask() {
-//            int x = 1, y = 1;
-//            @Override
-//            public void run() {
-//                if(pos_x < 0){
-//                    x = 1;
-//                }
-//                if(pos_x > 700 - 15){
-//                    x = -1;
-//                }
-//                if(pos_y < 0){
-//                    y = 1;
-//                }
-//                if(pos_y > 400 - 15){
-//                    y = -1;
-//                }
-//                pos_x = pos_x + x;
-//                pos_y = pos_y + y;
-//            }
-//        }, 0, 5);
+    public BallElement() {
+        super();
+        diameter = 0;
+        right = true;
+        down = true;
     }
 
     public void bounceOffVerticalWall(){
@@ -56,18 +40,37 @@ public class BallElement extends GameElement {
 //    }
 
 
-    public double get_radius(){
-        return radius;
+    public double getDiameter()
+    {
+        return diameter;
     }
 
-    public void move(boolean keep_x, boolean keep_y){
+    public void setDiameter(double dia){
+        diameter = dia;
+    }
+
+    public void setRight(boolean right){
+        this.right = right;
+    }
+
+    public void setDown(boolean down){
+        this.down = down;
+    }
+
+
+    public void move(){
         int x;
         int y;
-        x = (keep_x) ? 1 : -1;
-        y = (keep_y) ? 1 : -1;
+        x = (right) ? 1 : -1;
+        y = (down) ? 1 : -1;
 
-        pos_x += x * vx;
+        pos_x += 1.5 * x * vx;
         pos_y += y * vy;
+    }
+
+    public Rectangle2D getShape()
+    {
+        return new Rectangle2D.Double(pos_x,pos_y,diameter,diameter);
     }
 
 
